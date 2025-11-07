@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './style.css';
-import config from './config.js';
+
 
 const FestivalManager = () => {
   const [festivals, setFestivals] = useState([]);
@@ -18,7 +18,7 @@ const FestivalManager = () => {
   const [message, setMessage] = useState('');
   const [editMode, setEditMode] = useState(false);
 
-  const baseUrl = `${config.url}/festivalapi`;
+  const baseUrl = `${import.meta.env.VITE_API_URL}/festivalapi`;
 
   useEffect(() => {
     fetchAllFestivals();
